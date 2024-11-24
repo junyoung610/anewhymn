@@ -1,0 +1,118 @@
+@charset 'utf-8';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 20px/1.6 "Pretendard", sans-serif;
+    overflow-x: none;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+nav input[type="text"] {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.inner {
+    margin: 0 auto;
+    width: 1000px;
+}
+#book-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#book-list li {
+    border-radius: 10px;
+    background: #5f5;
+    width: 130px;
+    height: 75px;
+}
+
+#book-list > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .inner {
+        width: 700px;
+    }
+    #book-list li {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 600px) {
+    .inner {
+        width: 300px;
+    }
+    #book-list li {
+        font-size: 13px;
+        width: 50px;
+        height: 50px;
+    }
+}
