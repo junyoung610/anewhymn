@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 목록으로 돌아가기
     backToListButton.addEventListener("click", () => {
         listView.style.display = "block";
-        bookList.style.display = "block";
+        bookList.style.display = "flex";
         contentView.style.display = "none";
         backToListButton.style.display = "none";
         header.style.display = "block"; // 목록으로 돌아가면 헤더 보이기
