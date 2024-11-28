@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.getElementById("header");
+    const listH1 = document.getElementById("list-h1");
     const listView = document.getElementById("list-view");
     const contentView = document.getElementById("content-view");
     const bookList = document.getElementById("book-list");
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sectionContent.textContent = item.content;
         sectionImage.src = item.image;
 
+        listH1.style.display = "none";
         listView.style.display = "none";
         bookList.style.display = "none";
         contentView.style.display = "block";
@@ -82,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 목록으로 돌아가기
     backToListButton.addEventListener("click", () => {
+        listH1.style.display = "block";
         listView.style.display = "block";
         bookList.style.display = "flex";
         contentView.style.display = "none";
@@ -104,4 +107,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 초기화
     loadData();
+});
+// 모달 열기
+function openModal(imgSrc) {
+    const modal = document.getElementById("imageModal");
+    const expandedImage = document.getElementById("expandedImage");
+
+    // 클릭한 이미지의 src를 모달 이미지에 설정
+    expandedImage.src = imgSrc;
+
+    // 모달 표시
+    modal.style.display = "flex";
+}
+
+// 모달 닫기
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
+
+// 이미지에 이벤트 리스너 추가
+document.getElementById("section-image").addEventListener("click", function () {
+    openModal(this.src);
 });

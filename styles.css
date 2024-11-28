@@ -54,10 +54,6 @@ img {
     height: auto;
 }
 
-.navigation {
-    margin-top: 20px;
-}
-
 button {
     margin: 0 10px;
     padding: 10px 20px;
@@ -84,17 +80,80 @@ button:disabled {
 
 #book-list li {
     border-radius: 10px;
-    background: #5f5;
-    width: 130px;
-    height: 75px;
+    background: #151736;
+    filter: blur(0.2px);
+    box-shadow: inset 5px 5px 10px 5px rgba(255, 255, 255, 0.2);
+    width: 120px;
+    height: 120px;
 }
 
 #book-list > li > a {
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+#section-title {
+    color: #333;
+}
+
+.main-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    filter: blur(0.2px);
+    box-shadow: inset 5px 5px 10px 10px rgba(255, 255, 255, 0.2);
+
+    font: 16px/1.6 "Pretendard", sans-serif;
+    color: #fff;
+    background: #151736;
+    border: none;
+    border-radius: 10px;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; /* 초기에는 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* 어두운 배경 */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    animation: fadeIn 0.3s;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 900px) {
@@ -112,7 +171,7 @@ button:disabled {
     }
     #book-list li {
         font-size: 13px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 }

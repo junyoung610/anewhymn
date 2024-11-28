@@ -17,16 +17,24 @@
         </header>
 
         <!-- 목록 페이지 -->
-        <div id="list-view" class="section">
-            <h1>새찬송가 목록</h1>
+        <div id="list-view " class="section">
+            <h1 id="list-h1">새찬송가 목록</h1>
             <div class="inner">
                 <ul id="book-list"></ul>
             </div>
         </div>
 
         <!-- 콘텐츠 섹션 -->
+
         <div id="content-view" class="section" style="display: none">
-            <h2 id="section-title"></h2>
+            <div class="main-box inner">
+                <h2 id="section-title"></h2>
+                <div class="navigation">
+                    <button id="prev-button" disabled>이전</button>
+
+                    <button id="next-button" disabled>다음</button>
+                </div>
+            </div>
             <div class="inner">
                 <img
                     id="section-image"
@@ -34,15 +42,17 @@
                     alt="섹션 이미지"
                     style="width: 100%; height: 100%; object-fit: cover"
                 />
+                <p id="section-content"></p>
             </div>
-            <p id="section-content"></p>
-            <div class="navigation">
-                <button id="prev-button" disabled>이전</button>
-                <button id="back-to-list" style="display: none">
-                    목록으로
-                </button>
-                <button id="next-button" disabled>다음</button>
-            </div>
+            <button id="back-to-list" style="display: none; margin-top: 20px">
+                목록으로
+            </button>
+        </div>
+
+        <!-- 모달 추가 -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="expandedImage" />
         </div>
 
         <script src="script.js"></script>
