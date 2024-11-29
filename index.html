@@ -2,23 +2,42 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>전자책 뷰어</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
+
+        <title>새찬송가</title>
+        <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <!-- 헤더 -->
         <header id="header">
-            <!-- 목록 보기 영역 -->
-            <div id="list-view">
-                <input type="text" id="search-input" placeholder="검색..." />
-                <button id="search-button">검색</button>
+            <div class="header-box inner">
+                <h1 id="list-h1">새찬송가 목록</h1>
+                <!-- 목록 보기 영역 -->
+                <div id="list-view">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="찬송가을 검색하세요!"
+                    />
+                    <button id="search-button" style="margin: 0">검색</button>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="ri-sun-line" id="theme-icon"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
         <!-- 목록 페이지 -->
         <div id="list-view " class="section">
-            <h1 id="list-h1">새찬송가 목록</h1>
             <div class="inner">
                 <ul id="book-list"></ul>
             </div>
@@ -35,7 +54,7 @@
                     <button id="next-button" disabled>다음</button>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner section-main">
                 <img
                     id="section-image"
                     src=""

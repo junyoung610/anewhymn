@@ -59,6 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
         renderList(filteredData);
     });
 
+    // 검색 실행 함수
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        const filteredData = data.filter(
+            (item) =>
+                item.title.toLowerCase().includes(query) ||
+                item.content.toLowerCase().includes(query)
+        );
+        renderList(filteredData);
+    }
+
+    // 검색 버튼 클릭 시 검색 실행
+    searchButton.addEventListener("click", () => {
+        performSearch();
+    });
+
+    // Enter 키를 눌렀을 때 검색 실행
+    searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            performSearch();
+        }
+    });
+
     // 섹션 보기
     function showSection(id) {
         const index = data.findIndex((item) => item.id === id);
@@ -129,4 +152,26 @@ function closeModal() {
 // 이미지에 이벤트 리스너 추가
 document.getElementById("section-image").addEventListener("click", function () {
     openModal(this.src);
+});
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+// 로컬 스토리지에서 모드 상태를 가져오기
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.classList.replace("ri-sun-line", "ri-moon-line");
+}
+
+// 모드 전환
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        themeIcon.classList.replace("ri-sun-line", "ri-moon-line");
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeIcon.classList.replace("ri-moon-line", "ri-sun-line");
+        localStorage.setItem("theme", "light");
+    }
 });
