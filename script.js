@@ -154,24 +154,29 @@ document.getElementById("section-image").addEventListener("click", function () {
     openModal(this.src);
 });
 
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
+// 버튼과 body 요소 가져오기
+const toggleButton = document.getElementById("mode-toggle");
+const body = document.body;
+const icon = toggleButton.querySelector("i");
 
-// 로컬 스토리지에서 모드 상태를 가져오기
-const currentTheme = localStorage.getItem("theme");
-if (currentTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    themeIcon.classList.replace("ri-sun-line", "ri-moon-line");
+// 로컬 스토리지에서 이전 테마 저장 여부 확인
+const currentMode = localStorage.getItem("mode");
+if (currentMode === "dark") {
+    body.classList.add("dark-mode");
+    icon.classList.remove("ri-sun-fill");
+    icon.classList.add("ri-moon-fill"); // 달 아이콘으로 변경
 }
 
-// 모드 전환
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        themeIcon.classList.replace("ri-sun-line", "ri-moon-line");
-        localStorage.setItem("theme", "dark");
+// 버튼 클릭 시 모드 변경
+toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+        icon.classList.remove("ri-sun-fill");
+        icon.classList.add("ri-moon-fill"); // 다크 모드일 때 달 아이콘 표시
+        localStorage.setItem("mode", "dark");
     } else {
-        themeIcon.classList.replace("ri-moon-line", "ri-sun-line");
-        localStorage.setItem("theme", "light");
+        icon.classList.remove("ri-moon-fill");
+        icon.classList.add("ri-sun-fill"); // 화이트 모드일 때 태양 아이콘 표시
+        localStorage.setItem("mode", "light");
     }
 });

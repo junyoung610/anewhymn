@@ -1,6 +1,7 @@
 @charset 'utf-8';
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+/* 공통 스타일 */
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +10,11 @@
 
 body {
     font: 20px/1.6 "Pretendard", sans-serif;
-    overflow-x: none;
+    overflow-x: hidden;
 
     /* 텍스트 선택 및 드래그 금지 */
-    -webkit-user-select: none; /* Safari/Chrome */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* 표준 */
-    -webkit-touch-callout: none; /* iOS */
+    user-select: none;
+    -webkit-touch-callout: none;
 
     /* 기본 모드 (화이트) */
     background-color: #ffffff;
@@ -29,30 +27,19 @@ body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
-
 body.dark-mode #header {
     background-color: #1f1f1f;
 }
-
 body.dark-mode #section-title {
-    color: #fff;
+    color: #ffffff;
 }
 
-/* 버튼 스타일 */
-.theme-toggle {
-    display: none;
-    cursor: pointer;
-    border: none;
-    background: none;
-    color: inherit;
-}
-
+/* 헤더 스타일 */
 header {
     background-color: #f8f9fa;
     padding: 10px;
     text-align: center;
 }
-
 .header-box {
     display: flex;
     justify-content: space-between;
@@ -62,74 +49,39 @@ header {
     font-size: 20px;
     font-weight: 600;
 }
+
+/* 네비게이션 스타일 */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-
-nav input[type="text"] {
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
+nav input[type="text"],
 #search-input {
-    color: #000;
-    background: #fff;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     border: none;
+    background: #fff;
+    color: #000;
 }
 
-#list-view {
-    gap: 29px;
-}
-
+/* 섹션 및 리스트 스타일 */
 .section {
     padding: 20px;
     text-align: center;
 }
-
 ul {
     list-style-type: none;
     padding: 0;
 }
-
 ul li {
     margin: 10px 0;
 }
-
 ul li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}
-
-.inner {
-    margin: 0 auto;
-    width: 1000px;
-}
-
-.section-main {
-    margin-top: 20px;
 }
 #book-list {
     display: flex;
@@ -138,17 +90,14 @@ button:disabled {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 #book-list li {
-    border-radius: 10px;
-    background: #151736;
-    filter: blur(0.2px);
-    box-shadow: inset 5px 5px 10px 5px rgba(255, 255, 255, 0.2);
     width: 120px;
     height: 120px;
+    border-radius: 10px;
+    background: #151736;
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.2);
 }
-
-#book-list > li > a {
+#book-list li a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -156,48 +105,83 @@ button:disabled {
     width: 100%;
     height: 100%;
 }
-
-#section-title {
-    color: #333;
+.inner {
+    margin: 0 auto;
+    width: 1000px;
 }
 
+/* main-box */
 .main-box {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
+/* section-main */
+.section-main {
+    margin-top: 20px;
+}
 
+/* 버튼 스타일 */
 button {
-    filter: blur(0.2px);
-    box-shadow: inset 5px 5px 10px 10px rgba(255, 255, 255, 0.2);
-
+    padding: 10px 20px;
     font: 16px/1.6 "Pretendard", sans-serif;
     color: #fff;
     background: #151736;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s;
+}
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 다크 모드 버튼 */
+#mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+#mode-toggle:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 /* 모달 스타일 */
 .modal {
-    display: none; /* 초기에는 숨김 */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 1); /* 어두운 배경 */
+    background-color: rgba(0, 0, 0, 1);
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
     max-width: 100%;
     max-height: 100%;
     animation: fadeIn 0.3s;
 }
-
 .close {
     position: absolute;
     top: 10px;
@@ -208,19 +192,8 @@ button {
     cursor: pointer;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
+/* 반응형 스타일 */
 @media (max-width: 900px) {
-    .theme-toggle {
-        display: block;
-    }
     .inner {
         width: 85%;
     }
@@ -234,17 +207,13 @@ button {
         width: 100%;
     }
     #book-list li {
-        font-size: 13px;
         width: 40px;
         height: 40px;
+        font-size: 13px;
     }
     .header-box {
-        gap: 25px;
         flex-wrap: wrap;
-    }
-    #list-view {
-        display: flex;
-        justify-content: space-between;
+        gap: 25px;
     }
     #search-input {
         padding: 5px 10px;
