@@ -145,13 +145,13 @@ button:hover {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 40px;
     border-radius: 50%;
     background-color: #ffffff;
     color: #000;
     border: none;
-    font-size: 36px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +162,18 @@ button:hover {
 #mode-toggle:hover {
     background-color: #000000;
     color: #ffffff;
+}
+
+.dark-mode #mode-toggle {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode #mode-toggle:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 /* 모달 스타일 */
@@ -216,6 +228,6 @@ button:hover {
         gap: 25px;
     }
     #search-input {
-        padding: 5px 10px;
+        padding: 5px 23px;
     }
 }
