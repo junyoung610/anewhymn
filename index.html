@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
 
-    <title>새찬송가</title>
+    <title>새 찬송가 | 의정부길교회</title>
     <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
@@ -22,7 +22,7 @@
       <div class="header-box inner">
         <figure class="main-img">
           <img src="./img/gilchurch-logo.png" alt="길교회" />
-          <h1 id="list-h1">새찬송가 목록</h1>
+          <h1 id="list-h1">새 찬송가</h1>
         </figure>
 
         <!-- 목록 보기 영역 -->
@@ -39,7 +39,11 @@
       </div>
     </header>
     <div class="making inner" id="making">
-      <strong>제작 : 의정부길교회 | 김준영 청년</strong>
+      <strong
+        >제작 :
+        <div class="gilchurch">의정부길교회</div>
+        | 김준영 청년</strong
+      >
     </div>
     <!-- 목록 페이지 -->
     <div id="list-view" class="section">
@@ -61,7 +65,7 @@
     <div id="content-view" class="section" style="display: none">
       <div class="main-box inner">
         <figure class="main-img">
-          <img src="./img/icon.ico" alt="길교회" />
+          <img id="back-to-list2" src="./img/icon.ico" alt="길교회" />
           <h2 id="section-title"></h2>
         </figure>
 
@@ -71,8 +75,12 @@
           <button id="next-button" disabled>다음</button>
         </div>
       </div>
-      <div class="making inner">
-        <strong>제작 : 의정부길교회 | 김준영 청년</strong>
+      <div class="making inner" id="making">
+        <strong
+          >제작 :
+          <div class="gilchurch">의정부길교회</div>
+          | 김준영 청년</strong
+        >
       </div>
       <div class="inner section-main">
         <img
@@ -81,7 +89,7 @@
           alt="섹션 이미지"
           style="width: 100%; height: 100%; object-fit: cover"
         />
-        <p id="section-content"></p>
+        <p id="section-content" style="display: none"></p>
       </div>
       <button id="back-to-list" style="display: none; margin-top: 20px">
         목록으로

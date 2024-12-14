@@ -1,6 +1,19 @@
 @charset 'utf-8';
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+@font-face {
+  font-family: "Shilla_CultureB-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 길교회폰트 */
+.gilchurch {
+  font: 16px/1.6 "Shilla_CultureB-Bold", sans-serif;
+}
+
 /* 공통 스타일 */
 * {
   margin: 0;
@@ -108,10 +121,12 @@ ul li a {
   width: 120px;
   height: 120px;
   border-radius: 10px;
-  background: #151736;
-  box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to right, rgb(0, 55, 138), rgb(101, 179, 46));
+  box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5);
 }
 #book-list li a {
+  font-weight: 700;
+  font-size: 23px;
   color: #fff;
   display: flex;
   align-items: center;
@@ -141,7 +156,7 @@ button {
   padding: 10px 20px;
   font: 16px/1.6 "Pretendard", sans-serif;
   color: #fff;
-  background: #151736;
+  background: #3cafff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -153,7 +168,19 @@ button:disabled {
   cursor: not-allowed;
 }
 button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #91d700;
+}
+
+#next-button {
+  background-color: #91d700;
+}
+#next-button:hover {
+  background-color: #3cafff;
+}
+
+#back-to-list {
+  background: linear-gradient(105deg, rgb(0, 55, 138), rgb(101, 179, 46));
+  box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5);
 }
 
 /* 다크 모드 버튼 */
@@ -223,6 +250,13 @@ button:hover {
 .making {
   padding: 20px 0;
   text-align: right;
+}
+
+.making strong {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
 }
 
 /* 반응형 스타일 */

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const searchButton = document.getElementById("search-button");
   const backToListButton = document.getElementById("back-to-list");
+  const backToListButton2 = document.getElementById("back-to-list2");
   const sectionTitle = document.getElementById("section-title");
   const sectionContent = document.getElementById("section-content");
   const sectionImage = document.getElementById("section-image");
@@ -109,6 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 목록으로 돌아가기
   backToListButton.addEventListener("click", () => {
+    listH1.style.display = "block";
+    listView.style.display = "block";
+    bookList.style.display = "flex";
+    contentView.style.display = "none";
+    backToListButton.style.display = "none";
+    header.style.display = "block"; // 목록으로 돌아가면 헤더 보이기
+    making.style.display = "block";
+  });
+  backToListButton2.addEventListener("click", () => {
     listH1.style.display = "block";
     listView.style.display = "block";
     bookList.style.display = "flex";
