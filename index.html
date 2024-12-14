@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, user-scalable=no"
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <title>새찬송가</title>
+    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header id="header">
+      <div class="header-box inner">
+        <figure class="main-img">
+          <img src="./img/gilchurch-logo.png" alt="길교회" />
+          <h1 id="list-h1">새찬송가 목록</h1>
+        </figure>
+
+        <!-- 목록 보기 영역 -->
+        <div id="list-view">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="찬송가을 검색하세요!"
+          />
+          <button id="search-button" style="margin: 0">
+            <i class="ri-search-line"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="making inner" id="making">
+      <strong>제작 : 의정부길교회 | 김준영 청년</strong>
+    </div>
+    <!-- 목록 페이지 -->
+    <div id="list-view" class="section">
+      <div class="inner">
+        <ul id="book-list"></ul>
+      </div>
+    </div>
+
+    <main id="main">
+      <div class="dark-container">
+        <button id="mode-toggle">
+          <i class="ri-sun-fill"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- 콘텐츠 섹션 -->
+
+    <div id="content-view" class="section" style="display: none">
+      <div class="main-box inner">
+        <figure class="main-img">
+          <img src="./img/icon.ico" alt="길교회" />
+          <h2 id="section-title"></h2>
+        </figure>
+
+        <div class="navigation">
+          <button id="prev-button" disabled>이전</button>
+
+          <button id="next-button" disabled>다음</button>
+        </div>
+      </div>
+      <div class="making inner">
+        <strong>제작 : 의정부길교회 | 김준영 청년</strong>
+      </div>
+      <div class="inner section-main">
+        <img
+          id="section-image"
+          src=""
+          alt="섹션 이미지"
+          style="width: 100%; height: 100%; object-fit: cover"
         />
+        <p id="section-content"></p>
+      </div>
+      <button id="back-to-list" style="display: none; margin-top: 20px">
+        목록으로
+      </button>
+    </div>
 
-        <title>새찬송가</title>
-        <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-            rel="stylesheet"
-        />
+    <!-- 모달 추가 -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="expandedImage" />
+    </div>
 
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <!-- 헤더 -->
-        <header id="header">
-            <div class="header-box inner">
-                <h1 id="list-h1">새찬송가 목록</h1>
-
-                <!-- 목록 보기 영역 -->
-                <div id="list-view">
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="찬송가을 검색하세요!"
-                    />
-                    <button id="search-button" style="margin: 0">
-                        <i class="ri-search-line"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- 목록 페이지 -->
-        <div id="list-view " class="section">
-            <div class="inner">
-                <ul id="book-list"></ul>
-            </div>
-        </div>
-
-        <main id="main">
-            <div class="dark-container">
-                <button id="mode-toggle">
-                    <i class="ri-sun-fill"></i>
-                </button>
-            </div>
-        </main>
-
-        <!-- 콘텐츠 섹션 -->
-
-        <div id="content-view" class="section" style="display: none">
-            <div class="main-box inner">
-                <h2 id="section-title"></h2>
-                <div class="navigation">
-                    <button id="prev-button" disabled>이전</button>
-
-                    <button id="next-button" disabled>다음</button>
-                </div>
-            </div>
-            <div class="inner section-main">
-                <img
-                    id="section-image"
-                    src=""
-                    alt="섹션 이미지"
-                    style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <p id="section-content"></p>
-            </div>
-            <button id="back-to-list" style="display: none; margin-top: 20px">
-                목록으로
-            </button>
-        </div>
-
-        <!-- 모달 추가 -->
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="expandedImage" />
-        </div>
-
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>
