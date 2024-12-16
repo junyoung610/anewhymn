@@ -303,7 +303,7 @@ button:hover {
 /* 반응형 스타일 */
 @media (max-width: 900px) {
   .inner {
-    width: 100%;
+    width: 90%;
   }
   #book-list li {
     width: 80px;
