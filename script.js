@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 목록으로 돌아가기
   backToListButton.addEventListener("click", () => {
     listH1.style.display = "block";
-    listView.style.display = "block";
+    listView.style.display = "flex";
     sectionmain.style.display = "none";
     bookList.style.display = "flex";
     contentView.style.display = "none";
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   backToListButton2.addEventListener("click", () => {
     listH1.style.display = "block";
-    listView.style.display = "block";
+    listView.style.display = "flex";
     sectionmain.style.display = "none";
     bookList.style.display = "flex";
     contentView.style.display = "none";
