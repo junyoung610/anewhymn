@@ -301,7 +301,9 @@ button:hover {
 
 .main-img {
   width: 200px;
-  background-image: url(./img/gilchurch-logo.png);
+  height: 100px;
+  background: url(./img/gilchurch-logo.png) no-repeat 50% 50%;
+  background-size: contain;
   text-align: left;
 }
 /* 반응형 스타일 */
