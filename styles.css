@@ -327,9 +327,8 @@ button:hover {
 }
 @media (max-width: 600px) {
   #book-list li {
-    width: 40px;
-    height: 40px;
-    font-size: 13px;
+    width: 60px;
+    height: 60px;
   }
   .header-box {
     flex-wrap: wrap;
@@ -355,7 +354,7 @@ button:hover {
     font-size: 15px;
   }
   #book-list li a {
-    font-size: 13px;
+    font-size: 14.5px;
   }
   .slogan h1 {
     font-size: 15px;

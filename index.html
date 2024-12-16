@@ -40,7 +40,7 @@
     </header>
 
     <section class="info inner">
-      <div class="making" id="making">
+      <div class="making" id="main-making">
         <strong>
           by.
           <div class="gilchurch">의정부길교회</div>
@@ -79,7 +79,7 @@
           <img id="back-to-list2" src="./img/icon.ico" alt="길교회" />
         </figure>
 
-        <div class="making inner" id="making">
+        <div class="making inner" id="making" style="display: none">
           <strong
             >제작 :
             <div class="gilchurch">의정부길교회</div>
@@ -104,7 +104,7 @@
       </div>
     </section>
 
-    <section class="inner section-main">
+    <section id="section-main" class="inner section-main" style="display: none">
       <img
         id="section-image"
         src=""
@@ -113,9 +113,7 @@
       />
       <p id="section-content" style="display: none"></p>
     </section>
-    <button id="back-to-list" style="display: none; margin-top: 20px">
-      목록으로
-    </button>
+    <div id="back-to-list" style="display: none; margin-top: 20px"></div>
 
     <!-- 모달 추가 -->
     <div id="imageModal" class="modal" onclick="closeModal()">

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listH1 = document.getElementById("list-h1");
   const listView = document.getElementById("list-view");
   const contentView = document.getElementById("content-view");
+  const sectionmain = document.getElementById("section-main");
   const bookList = document.getElementById("book-list");
   const searchInput = document.getElementById("search-input");
   const searchButton = document.getElementById("search-button");
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
   const making = document.getElementById("making");
+  const mainmaking = document.getElementById("main-making");
 
   let data = [];
   let currentIndex = -1;
@@ -97,11 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listH1.style.display = "none";
     listView.style.display = "none";
+    sectionmain.style.display = "block";
     bookList.style.display = "none";
     contentView.style.display = "block";
     backToListButton.style.display = "inline-block";
     header.style.display = "none"; // 콘텐츠 보기 시 헤더 숨김
-    making.style.display = "none";
+    making.style.display = "block";
+    mainmaking.style.display = "none";
 
     // 이전/다음 버튼 상태 업데이트
     prevButton.disabled = currentIndex === 0;
@@ -112,20 +116,24 @@ document.addEventListener("DOMContentLoaded", () => {
   backToListButton.addEventListener("click", () => {
     listH1.style.display = "block";
     listView.style.display = "block";
+    sectionmain.style.display = "none";
     bookList.style.display = "flex";
     contentView.style.display = "none";
     backToListButton.style.display = "none";
     header.style.display = "block"; // 목록으로 돌아가면 헤더 보이기
     making.style.display = "block";
+    mainmaking.style.display = "block";
   });
   backToListButton2.addEventListener("click", () => {
     listH1.style.display = "block";
     listView.style.display = "block";
+    sectionmain.style.display = "none";
     bookList.style.display = "flex";
     contentView.style.display = "none";
     backToListButton.style.display = "none";
     header.style.display = "block"; // 목록으로 돌아가면 헤더 보이기
     making.style.display = "block";
+    mainmaking.style.display = "block";
   });
 
   // 이전/다음 버튼 동작
