@@ -300,8 +300,9 @@ button:hover {
 }
 
 .main-img {
+  width: 200px;
+  background: #000;
   text-align: left;
-  height: 72px;
 }
 /* 반응형 스타일 */
 @media (max-width: 900px) {
